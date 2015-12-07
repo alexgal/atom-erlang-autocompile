@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Autocompile erlang files",
   "keywords": [ "erlang", "compilation", "save"],
-  "repository": "https://github.com/atom/erlang-autocompile",
+  "repository": "https://github.com/alexgal/atom-erlang-autocompile",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
