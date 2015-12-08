@@ -99,11 +99,17 @@ callErlc = (cwd,file,editor) ->
       showSuccessMessageOnCompile(wildcards) if hasOnCompileMessage()?
       runAfterCompileCommands(wildcards) if hasAfterCompileCommands()
 
-  executeCommand('erlc', [file],options, stdout,stderr,exit)
+  executeCommand(getErlcPath(), [file],options, stdout,stderr,exit)
 
 #true if a starts with b, false otherwise
 startsWith = (a, b) ->
   (a.search b) == 0
+
+getErlcPath = () ->
+  if getFromConfig('compileCommand')?
+    getFromConfig('compileCommand')
+  else
+    'erlc'
 
 runCommand = (wildcards, afterCompileCommands, n) ->
   keys = Object.keys(afterCompileCommands)
